@@ -1,26 +1,25 @@
-\documentclass[a4paper]{article}
+% !TEX options=--shell-escape
+\documentclass{unibooklet}
 
-\usepackage{fullpage} % Package to use full page
-\usepackage{parskip} % Package to tweak paragraph skipping
-\usepackage{tikz} % Package for drawing
+\usepackage{parskip}
+\usepackage{tikz}
 \usepackage{amsmath}
-\usepackage{hyperref}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\usepackage[MeX]{polski}
-\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
 \usepackage{subfiles}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{tabularx}
 
-\title{Notatki z kursu Sieci Komputerowe}
+\title{%
+\vskip 2cm
+Sieci Komputerowe}
 \author{Małgorzata Dymek}
-\date{2018/19, semestr letni}
+\date{2018/2019}
 
 \begin{document}
-    \maketitle
-
-
+    \makeTitlePage
+    \tableofcontents
+    \pagebreak
 
     % \section{Laboratorium 1}
     % Zasady zaliczenia: trzy kolokwia (dwa pisane (adresacja + routing i switching)  + jedno praktyczne ( naprawienie zepsutych rzeczy ) )
@@ -157,7 +156,5 @@
 
     \section{Podstawy programowania w interfejsie gniazd (w zakresie omówionym na wykładzie).}
     \subfile{20}
-
-
 
 \end{document}

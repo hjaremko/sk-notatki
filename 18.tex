@@ -20,7 +20,7 @@
     \end{itemize}
 
     \subsection{Nagłówek IPv6.}
-    \begin{tabular}{|c|c|}
+    \begin{tabularx}{\textwidth}{|l|X|}
         \hline
         \textbf{Version} &
         wersja protokółu (6)\\
@@ -31,7 +31,6 @@
 
         \textbf{Flow Label} &
         etykietowanie pakietów wymagających takiego samego
-
         traktowania przez routery\\
         \hline
 
@@ -60,7 +59,7 @@
 
         załączony dodatkowy nagłówek typu Routing)\\
         \hline
-    \end{tabular}
+    \end{tabularx}
 
 
     \subsubsection{Dodatkowe nagłówki.}
@@ -102,31 +101,32 @@
     \begin{itemize}
         \item \textbf{osiem 16 bitowych sekcji w zapisie szesnastkowym}, oddzielonych dwukropkami,
 
-        np.: fe80:0000:0000:0000:0202:b3ff:fe1e:8329
-        \item długi ciąg zer może być \textbf{raz} połączony i przedstawiony jako dwa dwukropki "::"
+        np.: \texttt{fe80:0000:0000:0000:0202:b3ff:fe1e:8329}
+        \item długi ciąg zer może być \textbf{raz} połączony i przedstawiony jako dwa dwukropki "\texttt{::}"
         \item w środowisku z węzłami IPv4 oraz IPv6 często \textbf{w adresie IPv6 umieszcza się również IPv4}. Są dwa typy takich adresów:
         \begin{itemize}
             \item \textbf{Typ 1: IPv4-Compatible IPv6 Address} - 96 bitów zero + adres IPv4
-            \item \textbf{Typ 2: IPv4-Mapped IPv6 Address} (zalecany) - $0000..............................0000$ ffff + IPv4 address
+            \item \textbf{Typ 2: IPv4-Mapped IPv6 Address} (zalecany) -\\
+            \texttt{0000..............................0000 ffff} + IPv4 address
         \end{itemize}
         \item Zamiast identyfikatora sieci (jak było w IPv4), w IPv6 używa się tzw. \textbf{prefiksu}. Prefiks to \textbf{pewna liczba bitów} adresu licząc z lewej strony. Prefiks \textbf{określa} zatem \textbf{sieć}. Prefiks podaje się standardowo jako pewną liczbę sekcji adresu.
     \end{itemize}
 
     \subsubsection{Typy adresów}
     \begin{itemize}
-        \item \textbf{Adres niewyspecyfikowany} - ::/128
-        \item \textbf{Pętla zwrotna} (Loopback) - ::1/128
-        \item \textbf{Multicast} - ff00::/8 (1111 1111)
-        \item \textbf{Link-local unicast} - fe80::/10 (1111 1110 10)
+        \item \textbf{Adres niewyspecyfikowany} - \texttt{::/128}
+        \item \textbf{Pętla zwrotna} (Loopback) - \texttt{::1/128}
+        \item \textbf{Multicast} - \texttt{ff00::/8 (1111 1111)}
+        \item \textbf{Link-local unicast} - \texttt{fe80::/10 (1111 1110 10)}
         \item \textbf{Global unicast}
     \end{itemize}
 
 
     \subsubsection{Skąd wziąć adres MAC?}
     \begin{itemize}
-        \item Unicastowy adres IP na multicastowy (Solicited Node Multicast address) - ff02:0:0:0:0:1:ff\_:\_ \_,
+        \item Unicastowy adres IP na multicastowy (Solicited Node Multicast address) - \texttt{ff02:0:0:0:0:1:ff\_:\_ \_},
         z trzema najmłodszymi bajtami adresu IP
-        \item Multicastowy MAC - 33:33:\_:\_:\_:\_ z czterema najmłodszymi bajtami adresu multicastowego
+        \item Multicastowy MAC - \texttt{33:33:\_:\_:\_:\_} z czterema najmłodszymi bajtami adresu multicastowego
         \item Ramka skonstruowana z adresem MAC, z pakietem IP z multicastowym IP w środku, z unicastowym w komunikacie ICMP
         \item Switche się znają na tyle, że ramka w miarę dochodzi tylko tam gdzie trzeba
         \item Komputer otrzymujący ramkę sprawdza czy o niego chodzi w komunikacie ICMP, i unicastowo odpowiada

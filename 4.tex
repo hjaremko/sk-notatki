@@ -3,25 +3,21 @@
 
 \begin{document}
 
-    \begin{table}[H]
-        \begin{center}
-            \begin{tabular}{ | p{.2\textwidth} | p{.1\textwidth} | p{.1\textwidth} | p{.15\textwidth} | p{.2\textwidth} | p{.2\textwidth} | }
-                \hline
-                Preambuła & src MAC & dst MAC & Typ danych & 46-1500 Dane & CRC\\
-                \hline
-                żeby się karty
+    \begin{tabularx}{\textwidth}{ | X | c | c | c | X | X | }
+        \hline
+        Preambuła & src MAC & dst MAC & Typ danych & 46-1500 Dane & CRC\\
+        \hline
+        żeby się karty
 
-                sieciowe
+        sieciowe
 
-                zsynchronizowały & & & & tu jest pakiet IP i
+        zsynchro- nizowały & & & & tu jest pakiet IP i
 
-                segment TCP & suma kontrolna\\
-                \hline
-                warstwa 1 & \multicolumn{4}{c}{warstwa 2 }&\\
-                \hline
-            \end{tabular}
-        \end{center}
-    \end{table}
+        segment TCP & suma kontrolna\\
+        \hline
+        warstwa 1 & \multicolumn{4}{c}{warstwa 2 }&\\
+        \hline
+    \end{tabularx}
 
     \subsection{Dostęp do nośnika}
 

@@ -105,9 +105,9 @@
             \item \textbf{Niezawodność} (reliability); wartość liczona jest jako swoisty
             „procent” pakietów, które dotarły do następnego routera.
         \end{itemize}
-        $metric = (K_1 * bandwidth + \frac{(K_2*bandwidth)}{(256 - load)} + K_3 * delay) *
+        $metric = (K_1 \cdot bandwidth + \frac{(K_2\cdot bandwidth)}{(256 - load)} + K_3 \cdot delay) \cdot
         \frac{K_5}{(reliability + K_4)}$
-        Standardowo $K_1 == K_3 == 1, K_2 == K_4 == K_5 == 0$.
+        Standardowo $K_1 = K_3 = 1, K_2 = K_4 = K_5 = 0$.
         \item przesyłane są również wartości \textbf{MTU} – najmniejsze MTU na trasie do sieci oraz liczba skoków
         \item przechowywanych jest \textbf{kilka optymalnych tras} do pewnego miejsca docelowego, mogą być przechowywane informacje o trasach nieoptymalnych
         \item \textbf{NIE ma trasy domyślnej 0.0.0.0}. Są trasy zewnętrzne, przez tzw. '\textbf{router of last resort}'

@@ -60,6 +60,7 @@
         \item Serwer WWW konstruuje odpowiedź – stronę WWW. Strona ta zostanie umieszczona w komunikacie http, który następnie musi być przesłany do K1. Mechanizm jest analogiczny jak poprzednio.
     \end{itemize}
 
+\begin{adjustbox}{width=\columnwidth,center}
     \begin{tabular}{|c|c|c|c|c|}
         \hline
         \textbf{Nagłówek ramki }& \textbf{Nagłówek IP }& \textbf{Nagłówek TCP }& \textbf{Komunikat HTTP }& \textbf{Suma kontrolna}\\
@@ -67,6 +68,7 @@
         & 20 bajtów & 20 bajtów & & 4 bajty\\
         \hline
     \end{tabular}
+\end{adjustbox}
 
     \textbf{W przypadku komunikacji między komputerami rozdzielonymi przynajmniej jednym routerem} ramka wysyłana jest do bramy domyślnej (ARP na bramę), gdzie jest niszczona
     i nowa jest przekazywana dalej wg tego co w nagłówku pakietu IP.
