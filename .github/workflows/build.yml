@@ -12,18 +12,20 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
+          working_directory: src
           root_file: main.tex
           args: -xelatex -shell-escape
       - name: Install texlive extra utils
         run: sudo apt-get install texlive-extra-utils
       - name: Create booklet
         run: |
+          cd src
           pdfbook --short-edge main.pdf
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: sk-notatki
-          path: ./*.pdf
+          path: src/*.pdf
 
   release:
     name: Publish documents
